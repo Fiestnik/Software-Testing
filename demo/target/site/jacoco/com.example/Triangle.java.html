@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Triangle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">Triangle.java</span></div><h1>Triangle.java</h1><pre class="source lang-java linenums">package com.example;
+
+<span class="nc" id="L3">public class Triangle {</span>
+
+    public static String classify(int a, int b, int c) {
+        // c1–c3: range checks
+<span class="fc bfc" id="L7" title="All 4 branches covered.">        if (a &lt; 1 || a &gt; 200) {</span>
+<span class="fc" id="L8">            return &quot;Value of a is not in the range of permitted values.&quot;;</span>
+        }
+<span class="fc bfc" id="L10" title="All 4 branches covered.">        if (b &lt; 1 || b &gt; 200) {</span>
+<span class="fc" id="L11">            return &quot;Value of b is not in the range of permitted values.&quot;;</span>
+        }
+<span class="fc bfc" id="L13" title="All 4 branches covered.">        if (c &lt; 1 || c &gt; 200) {</span>
+<span class="fc" id="L14">            return &quot;Value of c is not in the range of permitted values.&quot;;</span>
+        }
+
+        // c4–c6: triangle inequality (strict)
+<span class="pc bpc" id="L18" title="2 of 6 branches missed.">        if (a &gt;= b + c || b &gt;= a + c || c &gt;= a + b) {</span>
+<span class="fc" id="L19">            return &quot;NotATriangle&quot;;</span>
+        }
+
+        // classification
+<span class="fc bfc" id="L23" title="All 4 branches covered.">        if (a == b &amp;&amp; b == c) {</span>
+<span class="fc" id="L24">            return &quot;Equilateral&quot;;</span>
+        }
+<span class="pc bpc" id="L26" title="2 of 6 branches missed.">        if (a == b || a == c || b == c) {</span>
+<span class="fc" id="L27">            return &quot;Isosceles&quot;;</span>
+        }
+<span class="fc" id="L29">        return &quot;Scalene&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
